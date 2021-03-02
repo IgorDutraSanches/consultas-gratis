@@ -1,22 +1,50 @@
 package com.birdsoft.consultasgratis;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.birdsoft.consultasgratis.activity.ConsultaActivity;
 import com.birdsoft.consultasgratis.activity.CovidActivity;
 
 public class MainActivity extends AppCompatActivity {
 
+    private DrawerLayout drawer_layout;
+    private long count = 0;
+
+    @Override
+    public void onBackPressed() {
+        if(drawer_layout.isDrawerOpen(GravityCompat.START)){
+            drawer_layout.closeDrawer(GravityCompat.START);
+            return;
+        }
+        if(System.currentTimeMillis() - count > 2000){
+            count = System.currentTimeMillis();
+            Toast.makeText(this, "Clique novamente para sair", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        finishAffinity();
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        drawer_layout = findViewById(R.id.drawer_layout);
+        ((Toolbar)findViewById(R.id.toolbar)).setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+               drawer_layout.openDrawer(GravityCompat.START);
+            }
+        });
 
     }
 
