@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/nav_header_main"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <LinearLayout
+        android:onClick="onShare"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:clickable="true"
+        android:layout_marginTop="10dp"
+        android:gravity="center_vertical"
+        android:focusable="true"
+        android:foreground="?attr/selectableItemBackground">
+        <ImageView
+            app:tint="@color/colorLiveIconTint"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginLeft="16dp"
+            android:alpha="0.8"
+            android:layout_marginRight="26dp"
+            android:src="@drawable/ic_action_share"/>
+        <TextView
+            android:textColor="@color/colorText"
+            android:textSize="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Compartilhar"/>
+    </LinearLayout>
+
+</LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_marginLeft="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Igor Dutra Sanches"
+                android:textColor="@color/colorText"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:layout_gravity="center_horizontal"
+                android:alpha="0.1"
+                android:layout_marginBottom="10dp"/>
+            <LinearLayout
+                android:onClick="onShowGit"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:clickable="true"
+                android:gravity="center_vertical"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackground">
+                <ImageView
+                    app:tint="@color/colorLiveIconTint"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginLeft="16dp"
+                    android:alpha="0.8"
+                    android:layout_marginRight="26dp"
+                    android:src="@drawable/github"/>
+                <TextView
+                    android:textColor="@color/colorText"
+                    android:textSize="16dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Código fonte"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
