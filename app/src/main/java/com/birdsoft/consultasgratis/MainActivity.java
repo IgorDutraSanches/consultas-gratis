@@ -75,6 +75,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onShowGit(View view) {
-        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/IgorDutraSanches/consultas_gratis")));
+        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/IgorDutraSanches/consultas-gratis-cnpj-ip-cep-outros")));
     }
 }
